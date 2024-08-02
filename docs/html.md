@@ -2,16 +2,19 @@
 
 Here is how to embed interactive code snippets into your HTML or Markdown pages:
 
--   [Interactive code block](#interactive-code-block)
--   [Attaching to an element](#attaching-to-a-specific-element)
--   [Syntax highlighting](#syntax-highlighting-and-rich-editing)
--   [Output modes](#output-modes)
--   [Templates](#templates)
--   [Files](#files)
--   [Custom actions](#custom-actions)
--   [Code cells](#code-cells)
--   [Sandbox version](#sandbox-version)
--   [Global settings](#global-settings)
+- [Code playgrounds in HTML or Markdown pages](#code-playgrounds-in-html-or-markdown-pages)
+  - [Interactive code block](#interactive-code-block)
+  - [Attaching to a specific element](#attaching-to-a-specific-element)
+  - [Syntax highlighting and rich editing](#syntax-highlighting-and-rich-editing)
+  - [Output modes](#output-modes)
+  - [Templates](#templates)
+  - [Files](#files)
+  - [Custom actions](#custom-actions)
+  - [Code cells](#code-cells)
+  - [Sandbox version](#sandbox-version)
+  - [Global settings](#global-settings)
+    - [Self-hosted server](#self-hosted-server)
+    - [Run timeout](#run-timeout)
 
 ## Interactive code block
 
@@ -180,3 +183,12 @@ https://codapi.example.org/v1
 ```
 
 Note that the `/v1` part stays the same — it's the path the Codapi server uses for API requests.
+
+### Run timeout
+
+The default run timeout is 10000ms (10s). If you are expecting your snippet to run for longer than that you can specify a diffent timeout using the `timeout` setting:
+
+```html
+<codapi-settings timeout="15000">
+</codapi-settings>
+```

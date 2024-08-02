@@ -18,6 +18,7 @@ const errors = {
 async function exec(data) {
     try {
         const url = `${codobj.settings.url || defaultUrl}/exec`;
+        const timeout = codobj.settings.timeout;
         const resp = await fetchTimeout(url, {
             method: "POST",
             headers: {
@@ -25,6 +26,7 @@ async function exec(data) {
                 "content-type": "application/json",
             },
             body: JSON.stringify(data),
+            timeout
         });
         if (!resp.ok) {
             const msg = errors[resp.status] || defaultErrMsg;

@@ -13,6 +13,7 @@ class CodapiSettings extends HTMLElement {
             return;
         }
         codobj.settings.url = this.getAttribute("url");
+        codobj.settings.timeout = this.getAttribute("timeout");
         this.ready = true;
     }
 
